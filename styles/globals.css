@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 .sidebar-collapsed #main {
-  padding-left: calc(80px + 28px);
+  @apply left-[80px] lg:left-[calc(80px+28px)]
 }
 
 .sidebar-collapsed #header {
-  left: calc(80px + 28px);
+  @apply left-[80px] lg:left-[calc(80px+28px)]
 }
 
 .link-shape {
@@ -30,12 +30,9 @@
 
 .hide-scroll-bar {
   scrollbar-width: none;
-  /* Firefox */
   -ms-overflow-style: none;
-  /* Internet Explorer 10+ */
 }
 
 .hide-scroll-bar::-webkit-scrollbar {
   display: none;
-  /* Safari and Chrome */
 }

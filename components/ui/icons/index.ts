@@ -8,3 +8,4 @@ export { CartIcon } from "./cart";
 export { SearchIcon } from "./search";
 export { CartPlusIcon } from "./cart-plus";
 export { StarIcon } from "./star";
+export { BackIcon } from "./back";
