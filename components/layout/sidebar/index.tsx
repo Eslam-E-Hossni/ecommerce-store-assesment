@@ -49,7 +49,7 @@ export const Sidebar = () => {
   return (
     <aside
       className={cls(
-        "sidebar fixed h-dvh bg-gray-25 transition-all border-r border-r-gray-200",
+        "sidebar fixed h-full bg-gray-25 transition-all border-r border-r-gray-200",
         isSidebarActive ? "w-[240px]" : "w-[80px]"
       )}
       id="sidebar"
