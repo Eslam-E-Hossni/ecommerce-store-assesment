@@ -56,7 +56,7 @@ const FILTER_CATS = [
 const ProductsFilter = () => {
   return (
     <section id="filter" className="my-7">
-      <div className="flex items-center gap-x-3 md:gap-x-7 overflow-x-scroll hide-scroll-bar">
+      <div className="flex items-center gap-x-3 md:gap-x-4 overflow-x-scroll hide-scroll-bar">
         {FILTER_CATS.map((cat) => (
           <Button
             theme={cat.isActive ? "filterPill" : "ghostPill"}

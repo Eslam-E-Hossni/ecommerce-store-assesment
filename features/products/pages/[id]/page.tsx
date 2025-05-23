@@ -5,7 +5,7 @@ import Link from "next/link";
 import ProductDetails from "../../components/product-details";
 import Icon from "@/components/ui/icon";
 
-const page = async ({ params }: PageProps<{ id: string }>) => {
+const ProductDetailsPage = async ({ params }: PageProps<{ id: string }>) => {
   const { id } = params;
 
   // Check if id is not a number
@@ -33,4 +33,4 @@ const page = async ({ params }: PageProps<{ id: string }>) => {
   );
 };
 
-export default page;
+export default ProductDetailsPage;

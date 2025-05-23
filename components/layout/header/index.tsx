@@ -1,8 +1,12 @@
+"use client";
 import Button from "@/components/ui/button";
 import Icon from "@/components/ui/icon";
+import { useCartState } from "@/features/cart/hooks/useCart";
 import Image from "next/image";
 
 const Header = () => {
+  const { totalItems } = useCartState();
+
   return (
     <header
       id="header"
@@ -23,10 +27,21 @@ const Header = () => {
             </form>
           </div>
           <div className="flex items-center gap-x-6">
-            <Button icon="cart" size="md" iconColor="gray" theme="ghost" />
-            <Button theme="primary" size="md" className="hidden lg:block">
-              Become a seller
-            </Button>
+            <div className="relative">
+              <Button
+                icon="cart"
+                size="lg"
+                iconColor="gray"
+                theme="ghost"
+                href="/cart"
+              />
+
+              {totalItems > 0 && (
+                <span className="absolute w-[20px] h-[20px] bottom-0 left-5 rounded-full bg-primary-500 text-gray-900 font-bold flex items-center justify-center text-xs select-none">
+                  {totalItems}
+                </span>
+              )}
+            </div>
             <div className="hidden lg:block avatar relative w-[50px] h-[50px] rounded-full border-[2px] border-dashed border-primary-500 overflow-hidden">
               <Image
                 src="/images/avatar.jpg"

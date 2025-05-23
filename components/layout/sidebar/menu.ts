@@ -6,9 +6,9 @@ export const menue = {
       link: "/",
     },
     {
-      label: "Contact",
-      icon: "headset",
-      link: "/contact",
+      label: "Cart",
+      icon: "cart",
+      link: "/cart",
     },
   ],
   footer: [
