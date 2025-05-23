@@ -5,6 +5,7 @@ import { menue } from "./menu";
 import { useEffect, useState } from "react";
 import cls from "classnames";
 import Link from "next/link";
+import Icon from "@/components/ui/icon";
 
 export interface ILink {
   label: string;
@@ -109,9 +110,17 @@ export const Sidebar = () => {
       </div>
 
       <button
-        className="absolute -right-[11px] top-8 w-[25px] h-[25px] rounded-full bg-primary-500"
+        className="absolute -right-[11px] top-8 w-[25px] h-[25px] rounded-full bg-primary-500 flex items-center justify-center"
         onClick={handleSidebarToggle}
-      ></button>
+      >
+        <Icon
+          name="chevron"
+          size={16}
+          color="white"
+          direction={isSidebarActive ? "left" : "right"}
+          animated
+        />
+      </button>
     </aside>
   );
 };
