@@ -6,6 +6,7 @@ import {
   HeadsetIcon,
   QuestionIcon,
   ChevronIcon,
+  LoadingIcon,
 } from "../../icons";
 
 const ICONS: { [key: string]: { Component: React.FC<IconSVGProps> } } = {
@@ -14,6 +15,7 @@ const ICONS: { [key: string]: { Component: React.FC<IconSVGProps> } } = {
   headset: { Component: HeadsetIcon },
   question: { Component: QuestionIcon },
   chevron: { Component: ChevronIcon },
+  loading: { Component: LoadingIcon },
 };
 
 export default ICONS;

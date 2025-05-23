@@ -4,7 +4,7 @@ import { useState } from "react";
 import ICONS from "./icon-pack";
 
 export interface IconProps {
-  name: "home" | "gear" | "headset" | "question" | "chevron";
+  name: "home" | "gear" | "headset" | "question" | "chevron" | "loading";
   isHoverd?: boolean;
 
   direction?: "up" | "down" | "left" | "right";
@@ -66,7 +66,7 @@ export interface IconSVGProps {
 const COLOR = {
   white: "white",
   darkGray: "#454F5B",
-  gray: "#919EAB",
+  gray: "#637381",
   primary: "#FFC831",
   primaryLight: "#FFDA64",
   black: "black",
