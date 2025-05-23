@@ -1,0 +1,61 @@
+import Button from "@/components/ui/button";
+import Icon from "@/components/ui/icon";
+import Image from "next/image";
+import Link from "next/link";
+import { IProduct } from "../../types/product";
+
+const ProductCard = ({ product }: { product: IProduct }) => (
+  <div className="group">
+    <div>
+      <div className="w-full h-[250px] flex justify-center items-center bg-gray-300 rounded-xl overflow-hidden">
+        <div className="w-[300px] h-[220px] relative">
+          <Image
+            src={product.image}
+            fill
+            className="object-contain"
+            alt="product"
+            style={{ mixBlendMode: "multiply" }}
+          />
+        </div>
+      </div>
+    </div>
+
+    <div className="mt-4">
+      <div className="flex gap-x-4">
+        <div className="w-8 h-8 bg-yellow-100 rounded-full relative overflow-hidden">
+          <Image
+            src="/images/avatar.jpg"
+            className="z-10"
+            fill
+            alt="author pic from super.example"
+          />
+        </div>
+        <div className="w-full">
+          <Link
+            href={"/"}
+            className="font-heading-font font-semibold text-gray-800 transition-colors group-hover:text-primary-500"
+          >
+            {product?.title}
+          </Link>
+          <p className="text-gray-600 font-body-font mt-1">Islam Emad</p>
+          <div className="flex justify-between items-center mt-3">
+            <div>
+              <p className="text-primary-500 font-semibold font-heading-font mb-2">
+                ${product?.price}
+              </p>
+              <p className="flex items-center gap-x-2">
+                <Icon name="star" color="primary" size={18} />
+                <span className="text-sm text-gray-600">
+                  {product.rating.rate} ({product.rating.count})
+                </span>
+              </p>
+            </div>
+            <Button icon="cart-plus" theme="gray" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+export default ProductCard;
