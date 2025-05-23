@@ -24,7 +24,7 @@ const LinkItem = (props: LinkItemProps) => {
         className={cls(
           "flex items-center gap-x-4 py-3 relative transition-all hover:bg-gray-200 hover:rounded-r-full group",
           isActiveRoute(pathname, link) && "bg-gray-200 rounded-r-full",
-          isSidebarActive ? "px-8" : "px-7"
+          isSidebarActive ? "px-8" : "pl-4 lg:px-7"
         )}
       >
         <i

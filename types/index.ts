@@ -1,5 +1,5 @@
 export interface IButton {
-  size?: "sm" | "md" | "lg";
+  size?: "xs" | "sm" | "md" | "lg";
   icon?:
     | "home"
     | "gear"

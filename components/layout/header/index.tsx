@@ -10,7 +10,7 @@ const Header = () => {
   return (
     <header
       id="header"
-      className="fixed top-0 bg-white/70 backdrop-blur-md rounded-b-3xl h-[70px] flex items-center left-[80px] lg:left-[calc(240px+28px)] right-0 lg:right-[28px] transition-all z-40"
+      className="fixed top-0 bg-white/70 backdrop-blur-md rounded-b-3xl h-[70px] flex items-center left-[60px] lg:left-[calc(240px+28px)] right-0 lg:right-[28px] transition-all z-40"
     >
       <div className="px-6 w-full">
         <div className="flex items-center justify-between">
