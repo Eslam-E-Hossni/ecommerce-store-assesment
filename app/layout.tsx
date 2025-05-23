@@ -37,7 +37,7 @@ export default function RootLayout({
           <Header />
           <main
             id="main"
-            className="pl-[calc(80px+16px)] lg:pl-[calc(240px+28px)] pr-4 lg:pr-[28px] pt-[calc(78px+28px)] pb-[28px] transition-all"
+            className="pl-[calc(60px+16px)] lg:pl-[calc(240px+28px)] pr-4 lg:pr-[28px] pt-[calc(78px+28px)] pb-[28px] transition-all"
           >
             {children}
           </main>

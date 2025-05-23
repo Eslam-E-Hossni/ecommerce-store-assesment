@@ -91,7 +91,15 @@ const Button: React.FC<IButton> = (props) => {
         <Icon
           name={icon as "home"}
           size={
-            size === "sm" ? 14 : size === "md" ? 20 : size === "lg" ? 26 : 14
+            size === "xs"
+              ? 10
+              : size === "sm"
+              ? 14
+              : size === "md"
+              ? 20
+              : size === "lg"
+              ? 26
+              : 14
           }
           color={theme === "gray" ? "gray" : iconColor}
           direction={iconDirection}

@@ -50,7 +50,7 @@ export const Sidebar = () => {
     <aside
       className={cls(
         "sidebar fixed h-full bg-gray-25 transition-all border-r border-r-gray-200 z-50",
-        isSidebarActive ? "w-[240px]" : "w-[80px]"
+        isSidebarActive ? "w-[240px]" : "w-[60px] lg:w-[80px]"
       )}
       id="sidebar"
     >
@@ -61,19 +61,29 @@ export const Sidebar = () => {
             id="logo"
             className={cls(
               "flex items-center relative mb-11",
-              isSidebarActive ? "gap-x-3 px-8" : "px-4"
+              isSidebarActive ? "gap-x-3 px-8" : "px-3 lg:px-4"
             )}
           >
-            <Image
-              src={"/images/logo-base.svg"}
-              width={40}
-              height={40}
-              alt="logo from super.exampl"
-            />
+            {isSidebarActive && (
+              <Image
+                src={"/images/logo-base.svg"}
+                width={40}
+                height={40}
+                alt="logo from super.exampl"
+              />
+            )}
+            {!isSidebarActive && (
+              <Image
+                src={"/images/logo-base.svg"}
+                width={30}
+                height={30}
+                alt="logo from super.exampl"
+              />
+            )}
             <p
               className={cls(
-                "font-heading-font font-medium text-gray-600",
-                isSidebarActive ? "text-2xl" : "absolute opacity-0"
+                "font-heading-font text-2xl font-medium text-gray-600",
+                isSidebarActive ? "" : "absolute opacity-0"
               )}
             >
               Super
@@ -110,9 +120,17 @@ export const Sidebar = () => {
       </div>
 
       <Button
-        className="absolute -right-[11px] top-8"
+        className="hidden md:block absolute -right-[14px] lg:-right-[11px] top-5 lg:top-8"
         icon="chevron"
         size="sm"
+        theme="primary"
+        iconDirection={isSidebarActive ? "left" : "right"}
+        handler={handleSidebarToggle}
+      />
+      <Button
+        className="block md:hidden absolute -right-[14px] lg:-right-[11px] top-5 lg:top-8"
+        icon="chevron"
+        size="xs"
         theme="primary"
         iconDirection={isSidebarActive ? "left" : "right"}
         handler={handleSidebarToggle}
