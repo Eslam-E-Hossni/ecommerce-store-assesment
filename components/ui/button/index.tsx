@@ -68,7 +68,7 @@ const Button: React.FC<IButton> = (props) => {
       disabled={disabled}
     >
       {children && !isLoading && (
-        <span className={cls("font-heading-font font-medium")}>{children}</span>
+        <span className={cls("font-heading-font text-black_01")}>{children}</span>
       )}
 
       {icon && !isLoading && (

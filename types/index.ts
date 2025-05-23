@@ -1,6 +1,6 @@
 export interface IButton {
   size?: "sm" | "md" | "lg";
-  icon?: "home" | "gear" | "headset" | "question" | "chevron";
+  icon?: "home" | "gear" | "headset" | "question" | "chevron" | "cart";
   iconColor?:
     | "darkGray"
     | "gray"

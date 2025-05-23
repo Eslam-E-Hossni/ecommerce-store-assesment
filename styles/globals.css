@@ -3,8 +3,13 @@
 @tailwind utilities;
 
 .sidebar-collapsed #main {
-  padding-left: 80px;
+  padding-left: calc(80px + 28px);
 }
+
+.sidebar-collapsed #header {
+  left: calc(80px + 28px);
+}
+
 .link-shape {
   border-width: 18px 18px 18px 10px;
   border-style: solid;

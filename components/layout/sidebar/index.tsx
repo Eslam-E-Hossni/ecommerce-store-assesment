@@ -49,7 +49,7 @@ export const Sidebar = () => {
   return (
     <aside
       className={cls(
-        "sidebar fixed h-full bg-gray-25 transition-all border-r border-r-gray-200",
+        "sidebar fixed h-full bg-gray-25 transition-all border-r border-r-gray-200 z-50",
         isSidebarActive ? "w-[240px]" : "w-[80px]"
       )}
       id="sidebar"
@@ -68,7 +68,7 @@ export const Sidebar = () => {
               src={"/images/logo-base.svg"}
               width={40}
               height={40}
-              alt="logo from super.com"
+              alt="logo from super.exampl"
             />
             <p
               className={cls(
