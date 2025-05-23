@@ -1,6 +1,3 @@
-import Icon from "@/components/ui/icon";
-import React from "react";
-
 const loading = () => {
   return (
     <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center">
