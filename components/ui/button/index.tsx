@@ -40,7 +40,7 @@ const Button: React.FC<IButton> = (props) => {
         icon && "p-[10px]",
 
         // -------------------------------primary---------------------------------
-        theme === "primary" && "bg-primary-500 text-black",
+        theme === "primary" && "bg-primary-500 text-black_01",
         theme === "primary" && !disabled && "hover:bg-primary-600",
         theme === "primary" && disabled && "bg-primary-200 cursor-not-allowed",
         // -------------------------------secondary---------------------------------
@@ -52,7 +52,7 @@ const Button: React.FC<IButton> = (props) => {
         theme === "filterPill" && !disabled && "hover:bg-gray-900",
         theme === "filterPill" && disabled && "bg-gray-400 cursor-not-allowed",
         // -------------------------------ghostPill---------------------------------
-        theme === "ghostPill" && "py-[6px] px-3 bg-transparent text-black",
+        theme === "ghostPill" && "py-[6px] px-3 bg-gray-100 text-gray-600",
         theme === "ghostPill" &&
           !disabled &&
           "hover:bg-gray-800 hover:text-white",
@@ -68,7 +68,12 @@ const Button: React.FC<IButton> = (props) => {
       disabled={disabled}
     >
       {children && !isLoading && (
-        <span className={cls("font-heading-font text-black_01")}>{children}</span>
+        <span
+          className="block font-heading-font"
+          style={{ whiteSpace: "nowrap" }}
+        >
+          {children}
+        </span>
       )}
 
       {icon && !isLoading && (

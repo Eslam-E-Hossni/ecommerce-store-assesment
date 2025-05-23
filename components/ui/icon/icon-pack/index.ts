@@ -8,7 +8,9 @@ import {
   ChevronIcon,
   LoadingIcon,
   CartIcon,
-  SearchIcon
+  SearchIcon,
+  CartPlusIcon,
+  StarIcon
 } from "../../icons";
 
 const ICONS: { [key: string]: { Component: React.FC<IconSVGProps> } } = {
@@ -20,6 +22,8 @@ const ICONS: { [key: string]: { Component: React.FC<IconSVGProps> } } = {
   loading: { Component: LoadingIcon },
   cart: { Component: CartIcon },
   search: { Component: SearchIcon },
+  "cart-plus": { Component: CartPlusIcon },
+  star: { Component: StarIcon },
 };
 
 export default ICONS;

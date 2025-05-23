@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <header
       id="header"
-      className="fixed top-0 bg-white-50/70 backdrop-blur-[56px] rounded-b-3xl h-[70px] flex items-center left-[calc(80px+28px)] lg:left-[calc(240px+28px)] right-[28px] transition-all"
+      className="fixed top-0 bg-white/70 backdrop-blur-md rounded-b-3xl h-[70px] flex items-center left-[calc(80px+28px)] lg:left-[calc(240px+28px)] right-[28px] transition-all z-40"
     >
       <div className="px-6 w-full">
         <div className="flex items-center justify-between">
@@ -24,10 +24,10 @@ const Header = () => {
           </div>
           <div className="flex items-center gap-x-6">
             <Button icon="cart" size="md" iconColor="gray" theme="ghost" />
-            <Button theme="primary" size="md">
+            <Button theme="primary" size="md" className="hidden lg:block">
               Become a seller
             </Button>
-            <div className="avatar relative w-[50px] h-[50px] rounded-full border-[2px] border-dashed border-primary-500 overflow-hidden">
+            <div className="hidden lg:block avatar relative w-[50px] h-[50px] rounded-full border-[2px] border-dashed border-primary-500 overflow-hidden">
               <Image
                 src="/images/avatar.jpg"
                 fill

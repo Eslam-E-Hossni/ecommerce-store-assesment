@@ -6,3 +6,5 @@ export { ChevronIcon } from "./chevron";
 export { LoadingIcon } from "./loading";
 export { CartIcon } from "./cart";
 export { SearchIcon } from "./search";
+export { CartPlusIcon } from "./cart-plus";
+export { StarIcon } from "./star";
