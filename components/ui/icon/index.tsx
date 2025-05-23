@@ -5,16 +5,17 @@ import ICONS from "./icon-pack";
 
 export interface IconProps {
   name:
-  | "home"
-  | "gear"
-  | "headset"
-  | "question"
-  | "chevron"
-  | "loading"
-  | "cart"
-  | "cart-plus"
-  | "search"
-  | "star";
+    | "home"
+    | "gear"
+    | "headset"
+    | "question"
+    | "chevron"
+    | "loading"
+    | "cart"
+    | "cart-plus"
+    | "search"
+    | "star"
+    | "back";
   isHoverd?: boolean;
 
   direction?: "up" | "down" | "left" | "right";

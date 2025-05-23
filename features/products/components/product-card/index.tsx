@@ -7,7 +7,7 @@ import { IProduct } from "../../types/product";
 const ProductCard = ({ product }: { product: IProduct }) => (
   <div className="group">
     <div>
-      <div className="w-full h-[250px] flex justify-center items-center bg-gray-300 rounded-xl overflow-hidden">
+      <div className="w-full h-[250px] flex justify-center items-center bg-white_01/10 rounded-xl overflow-hidden">
         <div className="w-[300px] h-[220px] relative">
           <Image
             src={product.image}
@@ -32,7 +32,7 @@ const ProductCard = ({ product }: { product: IProduct }) => (
         </div>
         <div className="w-full">
           <Link
-            href={"/"}
+            href={`/products/${product?.id}`}
             className="font-heading-font font-semibold text-gray-800 transition-colors group-hover:text-primary-500"
           >
             {product?.title}
@@ -41,7 +41,7 @@ const ProductCard = ({ product }: { product: IProduct }) => (
           <div className="flex justify-between items-center mt-3">
             <div>
               <p className="text-primary-500 font-semibold font-heading-font mb-2">
-                ${product?.price}
+                ${Number(product?.price).toFixed(2)}
               </p>
               <p className="flex items-center gap-x-2">
                 <Icon name="star" color="primary" size={18} />
