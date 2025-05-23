@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.sidebar-collapsed #main {
+  padding-left: 80px;
+}
+.link-shape {
+  border-width: 18px 18px 18px 10px;
+  border-style: solid;
+  border-color: transparent transparent transparent #FFC831;
+}
+
+.link-shape::after {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: -1px;
+  width: 10px;
+  height: 11px;
+  background: #FFC831;
+  border-top-right-radius: 100%;
+  transform: rotate(37deg);
+}

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins, Roboto } from "next/font/google";
 import "../styles/globals.css";
+import { Sidebar } from "../components/layout";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -27,7 +28,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${poppins.variable} ${roboto.variable} font-sans`}>
-        {children}
+        <Sidebar />
+        <main id="main" className="pl-[80px] lg:pl-[240px] transition-all">
+          {children}
+        </main>
       </body>
     </html>
   );
