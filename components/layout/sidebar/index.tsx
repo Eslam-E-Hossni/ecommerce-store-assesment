@@ -5,7 +5,7 @@ import { menue } from "./menu";
 import { useEffect, useState } from "react";
 import cls from "classnames";
 import Link from "next/link";
-import Icon from "@/components/ui/icon";
+import Button from "@/components/ui/button";
 
 export interface ILink {
   label: string;
@@ -49,7 +49,7 @@ export const Sidebar = () => {
   return (
     <aside
       className={cls(
-        "sidebar fixed h-full bg-gray-25 transition-all border-r border-r-gray-200",
+        "sidebar fixed h-full bg-gray-25 transition-all border-r border-r-gray-200 z-50",
         isSidebarActive ? "w-[240px]" : "w-[80px]"
       )}
       id="sidebar"
@@ -68,7 +68,7 @@ export const Sidebar = () => {
               src={"/images/logo-base.svg"}
               width={40}
               height={40}
-              alt="logo from super.com"
+              alt="logo from super.exampl"
             />
             <p
               className={cls(
@@ -109,18 +109,14 @@ export const Sidebar = () => {
         </div>
       </div>
 
-      <button
-        className="absolute -right-[11px] top-8 w-[25px] h-[25px] rounded-full bg-primary-500 flex items-center justify-center"
-        onClick={handleSidebarToggle}
-      >
-        <Icon
-          name="chevron"
-          size={16}
-          color="white"
-          direction={isSidebarActive ? "left" : "right"}
-          animated
-        />
-      </button>
+      <Button
+        className="absolute -right-[11px] top-8"
+        icon="chevron"
+        size="sm"
+        theme="primary"
+        iconDirection={isSidebarActive ? "left" : "right"}
+        handler={handleSidebarToggle}
+      />
     </aside>
   );
 };
