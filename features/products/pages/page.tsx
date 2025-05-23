@@ -12,7 +12,7 @@ const ProductsPage = async () => {
 
   return (
     <div id="products-page">
-      <h1 className="text-lg md:text-xl font-bold">
+      <h1 className="text-lg md:text-xl xl:text-3xl font-bold">
         Best Selling Electronics Products - Weekly Update.
       </h1>
 

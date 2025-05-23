@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .sidebar-collapsed #main {
-  @apply left-[80px] lg:left-[calc(80px+28px)]
+  @apply pl-[calc(80px+16px)] lg:pl-[calc(80px+28px)]
 }
 
 .sidebar-collapsed #header {

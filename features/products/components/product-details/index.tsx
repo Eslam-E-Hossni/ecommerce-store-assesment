@@ -1,9 +1,39 @@
+"use client";
 import Image from "next/image";
 import { IProduct } from "../../types/product";
 import Icon from "@/components/ui/icon";
 import Button from "@/components/ui/button";
+import { useCartActions, useIsInCart } from "@/features/cart/hooks/useCart";
+import { useState } from "react";
 
 const ProductDetails = ({ product }: { product: IProduct }) => {
+  const { addToCart, removeFromCart } = useCartActions();
+  const isInCart = useIsInCart();
+  const [isAdding, setIsAdding] = useState(false);
+
+  const productInCart = isInCart(product.id);
+
+  const handleAddToCart = () => {
+    setIsAdding(true);
+
+    if (productInCart) {
+      removeFromCart(product.id);
+    } else {
+      addToCart({
+        id: product.id,
+        title: product.title,
+        price: product.price,
+        description: product.description,
+        rating: product.rating,
+        image: product.image,
+        category: product.category,
+      });
+    }
+
+    setTimeout(() => {
+      setIsAdding(false);
+    }, 500);
+  };
   return (
     <div className="flex flex-col lg:flex-row gap-x-10 py-4">
       <div className="w-full h-[400px] lg:h-[70dvh] lg:w-[604px] bg-white_01/10 relative mb-3 lg:mb-0">
@@ -54,7 +84,15 @@ const ProductDetails = ({ product }: { product: IProduct }) => {
             </p>
           </div>
         </div>
-        <Button theme="primary" className="rounded-none text-xl lg:w-[400px]">Add To Cart</Button>
+        <Button
+          theme="primary"
+          className="rounded-none text-xl flex items-center justify-center lg:w-[400px]"
+          handler={handleAddToCart}
+          disabled={isAdding}
+          isLoading={isAdding}
+        >
+          {productInCart ? "Remove From Cart" : "Add To Cart"}
+        </Button>
       </div>
     </div>
   );

@@ -2,6 +2,7 @@
 import { IButton } from "@/types";
 import cls from "classnames";
 import Icon from "../icon";
+import { useRouter } from "next/navigation";
 
 const Button: React.FC<IButton> = (props) => {
   const {
@@ -14,8 +15,18 @@ const Button: React.FC<IButton> = (props) => {
     children,
     disabled,
     isLoading,
+    href,
     handler,
   } = props;
+
+  const router = useRouter();
+
+  const navigateTo = () => {
+    if (href) {
+      router.push(href);
+    }
+  };
+  // router.push(href)
   return (
     <button
       className={cls(
@@ -61,10 +72,10 @@ const Button: React.FC<IButton> = (props) => {
         theme === "gray" && !disabled && "hover:bg-gray-300",
         theme === "gray" && disabled && "bg-gray-100 cursor-not-allowed",
 
-        "rounded-full transition-all",
+        "rounded-full transition-all text-center",
         className
       )}
-      onClick={() => (handler ? handler() : null)}
+      onClick={() => (href ? navigateTo() : handler ? handler() : null)}
       disabled={disabled}
     >
       {children && !isLoading && (

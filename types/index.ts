@@ -32,5 +32,6 @@ export interface IButton {
   children?: React.ReactNode;
   disabled?: boolean;
   isLoading?: boolean;
+  href?: string;
   handler?: () => void;
 }
