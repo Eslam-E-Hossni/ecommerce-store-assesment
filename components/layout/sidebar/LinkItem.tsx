@@ -1,10 +1,10 @@
 "use client";
 import Link from "next/link";
-import { isActiveRoute } from "../../../utils/routeMatch";
+import { isActiveRoute } from "@/utils/routeMatch";
 import cls from "classnames";
 import { usePathname } from "next/navigation";
 import { ILink } from ".";
-import Icon from "../../ui/icon";
+import Icon from "@/components/ui/icon";
 import { useState } from "react";
 
 interface LinkItemProps extends ILink {
@@ -35,7 +35,12 @@ const LinkItem = (props: LinkItemProps) => {
               : "-translate-x-full"
           )}
         />
-        <Icon name={icon as "home"} color={isActiveRoute(pathname, link) ? "primary" :"gray"} hoverColor="primary" isHoverd={isHoverd} />
+        <Icon
+          name={icon as "home"}
+          color={isActiveRoute(pathname, link) ? "primary" : "gray"}
+          hoverColor="primary"
+          isHoverd={isHoverd}
+        />
         <p
           className={cls(
             "font-heading-font",

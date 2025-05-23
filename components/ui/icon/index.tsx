@@ -4,7 +4,7 @@ import { useState } from "react";
 import ICONS from "./icon-pack";
 
 export interface IconProps {
-  name: "home" | "gear" | "headset" | "question";
+  name: "home" | "gear" | "headset" | "question" | "chevron";
   isHoverd?: boolean;
 
   direction?: "up" | "down" | "left" | "right";
