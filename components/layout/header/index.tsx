@@ -1,8 +1,8 @@
 "use client";
 import Button from "@/components/ui/button";
-import Icon from "@/components/ui/icon";
 import { useCartState } from "@/features/cart/hooks/useCart";
 import Image from "next/image";
+import Search from "./search";
 
 const Header = () => {
   const { totalItems } = useCartState();
@@ -14,18 +14,7 @@ const Header = () => {
     >
       <div className="px-6 w-full">
         <div className="flex items-center justify-between">
-          <div>
-            <form>
-              <div className="lg:w-[280px] bg-gray-100 py-[10px] px-6 flex items-center gap-x-2 rounded-full">
-                <Icon name="search" color="gray" size={16} />
-                <input
-                  type="text"
-                  placeholder="Search"
-                  className="w-full bg-transparent outline-none text-black_02 placeholder-black_02 font-heading-font text-sm"
-                />
-              </div>
-            </form>
-          </div>
+          <Search />
           <div className="flex items-center gap-x-6">
             <div className="relative">
               <Button

@@ -1,12 +1,11 @@
 "use client";
 import Image from "next/image";
-import { IProduct } from "../../types/product";
 import Icon from "@/components/ui/icon";
 import Button from "@/components/ui/button";
 import { useCartActions, useIsInCart } from "@/features/cart/hooks/useCart";
 import { useState } from "react";
 
-const ProductDetails = ({ product }: { product: IProduct }) => {
+const ProductDetails = ({ product }: { product: Produ }) => {
   const { addToCart, removeFromCart } = useCartActions();
   const isInCart = useIsInCart();
   const [isAdding, setIsAdding] = useState(false);

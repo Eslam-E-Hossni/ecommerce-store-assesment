@@ -20,11 +20,12 @@ export const useCartState = () => {
 
 
 export const useCartActions = () => {
-  const { addToCart, removeFromCart } = useCart();
+  const { addToCart, removeFromCart, clearCart } = useCart();
   
   return {
     addToCart,
     removeFromCart,
+    clearCart
   };
 };
 

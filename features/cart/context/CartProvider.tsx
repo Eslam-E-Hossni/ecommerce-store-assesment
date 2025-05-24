@@ -47,10 +47,15 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({
     });
   };
 
+  const clearCart = () => {
+    dispatch({ type: CartActionTypes.CLEAR_CART });
+  };
+
   const contextValue: CartContextType = {
     state,
     addToCart,
     removeFromCart,
+    clearCart
   };
 
   return (

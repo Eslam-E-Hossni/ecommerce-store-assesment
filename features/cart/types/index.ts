@@ -22,6 +22,7 @@ export enum CartActionTypes {
   ADD_TO_CART = "ADD_TO_CART",
   REMOVE_FROM_CART = "REMOVE_FROM_CART",
   LOAD_CART = "LOAD_CART",
+  CLEAR_CART = "CLEAR_CART",
 }
 
 export interface AddToCartAction {
@@ -36,6 +37,10 @@ export interface RemoveFromCartAction {
   };
 }
 
+export interface ClearCartAction {
+  type: CartActionTypes.CLEAR_CART;
+}
+
 export interface LoadCartAction {
   type: CartActionTypes.LOAD_CART;
   payload: CartItem[];
@@ -44,10 +49,12 @@ export interface LoadCartAction {
 export type CartAction =
   | AddToCartAction
   | RemoveFromCartAction
+  | ClearCartAction
   | LoadCartAction;
 
 export interface CartContextType {
   state: CartState;
   addToCart: (item: Omit<CartItem, "quantity">) => void;
   removeFromCart: (id: string | number) => void;
+  clearCart: () => void;
 }

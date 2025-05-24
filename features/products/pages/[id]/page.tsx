@@ -1,4 +1,4 @@
-import { PageProps } from "../../types/product";
+import { PageProps } from "@/types";
 import { notFound } from "next/navigation";
 import { getProductById } from "../../services/products";
 import Link from "next/link";

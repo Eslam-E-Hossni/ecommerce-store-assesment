@@ -1,10 +1,10 @@
 import Button from "@/components/ui/button";
 import Image from "next/image";
-import { IProduct } from "@/features/products/types/product";
+import { Product } from "@/features/products/types";
 import { useCartActions } from "../../hooks/useCart";
 import Link from "next/link";
 
-const CartCard = ({ item }: { item: IProduct }) => {
+const CartCard = ({ item }: { item: Product }) => {
   const { removeFromCart } = useCartActions();
   return (
     <div className="flex items-center py-4 px-4 md:px-8 lg:px-12 bg-white border border-gray-300 rounded-xl mb-6 last:mb-0">
@@ -19,13 +19,20 @@ const CartCard = ({ item }: { item: IProduct }) => {
           />
         </div>
         <div className="flex-1 mb-3 lg:mb-0 self-start lg:self-auto">
-          <Link href={`products/${item?.id}`} className="text-sm md:text-lg font-heading-font font-semibold text-black_04 mb-1">
+          <Link
+            href={`products/${item?.id}`}
+            className="text-sm md:text-lg font-heading-font font-semibold text-black_04 mb-1"
+          >
             {item.title}
           </Link>
-          <p className="text-sm md:text-base font-body-font text-gray-600">{item.category}</p>
+          <p className="text-sm md:text-base font-body-font text-gray-600">
+            {item.category}
+          </p>
         </div>
         <div className="mb-4 flex items-center gap-x-4 lg:block lg:mb-0 self-start lg:self-auto">
-          <p className="font-heading-font text-gray-600 text-base md:text-lg">Price</p>
+          <p className="font-heading-font text-gray-600 text-base md:text-lg">
+            Price
+          </p>
           <p className="font-body-font text-black_04 font-semibold ">
             ${Number(item.price).toFixed(2)}
           </p>

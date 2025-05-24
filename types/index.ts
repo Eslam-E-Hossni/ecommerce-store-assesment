@@ -35,3 +35,8 @@ export interface IButton {
   href?: string;
   handler?: () => void;
 }
+
+export type PageProps<T extends Record<string, string>> = {
+  params: T;
+  searchParams?: Record<string, string | string[] | undefined>;
+};
