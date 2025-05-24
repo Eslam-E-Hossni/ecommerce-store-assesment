@@ -1,12 +1,11 @@
 "use client";
 import Image from "next/image";
-import { IProduct } from "../../types/product";
-import Icon from "@/components/ui/icon";
-import Button from "@/components/ui/button";
+import { Badge, Button, Icon } from "@/components/ui";
 import { useCartActions, useIsInCart } from "@/features/cart/hooks/useCart";
 import { useState } from "react";
+import { Product } from "../../types";
 
-const ProductDetails = ({ product }: { product: IProduct }) => {
+export const ProductDetails = ({ product }: { product: Product }) => {
   const { addToCart, removeFromCart } = useCartActions();
   const isInCart = useIsInCart();
   const [isAdding, setIsAdding] = useState(false);
@@ -20,7 +19,7 @@ const ProductDetails = ({ product }: { product: IProduct }) => {
       removeFromCart(product.id);
     } else {
       addToCart({
-        id: product.id,
+        id: product.id as number,
         title: product.title,
         price: product.price,
         description: product.description,
@@ -48,9 +47,7 @@ const ProductDetails = ({ product }: { product: IProduct }) => {
       <div className="flex-1 flex flex-col justify-center">
         <div className="mb-8">
           <div className="mb-4">
-            <span className="inline-block text-sm lg:text-base py-[6px] px-3 bg-gray-800 text-white rounded-full">
-              {product.category}
-            </span>
+            <Badge label={product.category} />
           </div>
           <h3 className="text-2xl lg:text-[30px] font-heading-font font-semibold text-black_03 mb-2">
             {product.title}

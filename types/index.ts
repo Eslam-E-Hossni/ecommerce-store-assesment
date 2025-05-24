@@ -35,3 +35,12 @@ export interface IButton {
   href?: string;
   handler?: () => void;
 }
+
+export interface IBadge {
+  label: string
+}
+
+export type PageProps<T extends Record<string, string>> = {
+  params: T;
+  searchParams?: Record<string, string | string[] | undefined>;
+};

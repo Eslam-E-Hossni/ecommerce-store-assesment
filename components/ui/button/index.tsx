@@ -1,10 +1,10 @@
 "use client";
 import { IButton } from "@/types";
 import cls from "classnames";
-import Icon from "../icon";
+import {Icon} from "../";
 import { useRouter } from "next/navigation";
 
-const Button: React.FC<IButton> = (props) => {
+export const Button: React.FC<IButton> = (props) => {
   const {
     icon,
     size = "md",
@@ -26,11 +26,16 @@ const Button: React.FC<IButton> = (props) => {
       router.push(href);
     }
   };
-  // router.push(href)
+  
   return (
     <button
       className={cls(
         // size without icons
+        size === "xs" &&
+          !icon &&
+          theme !== "filterPill" &&
+          theme !== "ghostPill" &&
+          "py-1 px-2",
         size === "sm" &&
           !icon &&
           theme !== "filterPill" &&

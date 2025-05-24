@@ -1,6 +1,6 @@
 "use client"
 import { useContext } from 'react';
-import { CartContext } from '../context/CartContext';
+import { CartContext } from '../context';
 
 export const useCart = () => {
   const context = useContext(CartContext);
@@ -20,11 +20,12 @@ export const useCartState = () => {
 
 
 export const useCartActions = () => {
-  const { addToCart, removeFromCart } = useCart();
+  const { addToCart, removeFromCart, clearCart } = useCart();
   
   return {
     addToCart,
     removeFromCart,
+    clearCart
   };
 };
 

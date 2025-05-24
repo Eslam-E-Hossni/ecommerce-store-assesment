@@ -1,10 +1,9 @@
 "use client";
 import Image from "next/image";
 import { useCartState } from "../../hooks/useCart";
-import CartCard from "../cart-card";
-import CartCheckout from "../cart-checkout";
+import {CartCard, CartCheckout} from "../";
 
-const CartDetails = () => {
+export const CartDetails = () => {
   const { items } = useCartState();
 
   return items.length === 0 ? (

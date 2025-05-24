@@ -1,10 +1,16 @@
 import { notFound } from "next/navigation";
-import ProductsFilter from "../components/filter";
-import Products from "../components/products";
-import { getAllProducts } from "../services/products";
+import { ProductsFilter, Products } from "../components";
+import { getAllProducts } from "../services";
 
 const ProductsPage = async () => {
   const products = await getAllProducts();
+
+  const uniqueCategories = Array.from(
+    new Set(products?.map((product) => product.category))
+  ).map((category) => ({
+    name: category,
+    id: category,
+  }));
 
   if (!products) {
     notFound();
@@ -13,10 +19,10 @@ const ProductsPage = async () => {
   return (
     <div id="products-page">
       <h1 className="text-lg md:text-xl xl:text-3xl font-bold">
-        Best Selling Electronics Products - Weekly Update.
+        Best Selling Products
       </h1>
 
-      <ProductsFilter />
+      <ProductsFilter categories={uniqueCategories} />
       <Products products={products} />
     </div>
   );

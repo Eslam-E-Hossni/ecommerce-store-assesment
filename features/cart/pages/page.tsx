@@ -1,6 +1,6 @@
-import Icon from "@/components/ui/icon";
+import { Icon } from "@/components/ui";
 import Link from "next/link";
-import CartDetails from "../components/cart-details";
+import { CartDetails } from "../components";
 
 const CartPage = async () => {
   return (

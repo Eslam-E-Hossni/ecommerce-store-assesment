@@ -1,11 +1,11 @@
 "use client";
 import Image from "next/image";
 import LinkItem from "./LinkItem";
-import { menue } from "./menu";
+import { LINKS } from "./constants";
 import { useEffect, useState } from "react";
 import cls from "classnames";
 import Link from "next/link";
-import Button from "@/components/ui/button";
+import { Button } from "@/components/ui";
 
 export interface ILink {
   label: string;
@@ -91,7 +91,7 @@ export const Sidebar = () => {
           </Link>
           <nav>
             <ul>
-              {menue?.main.map((link: ILink) => (
+              {LINKS?.main.map((link: ILink) => (
                 <LinkItem
                   key={link.label}
                   {...link}
@@ -103,7 +103,7 @@ export const Sidebar = () => {
         </div>
         <div>
           <ul>
-            {menue?.footer.map((link: ILink) => (
+            {LINKS?.footer.map((link: ILink) => (
               <LinkItem
                 key={link.label}
                 {...link}

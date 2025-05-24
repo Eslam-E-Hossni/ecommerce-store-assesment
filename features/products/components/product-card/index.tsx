@@ -3,18 +3,15 @@ import Button from "@/components/ui/button";
 import Icon from "@/components/ui/icon";
 import Image from "next/image";
 import Link from "next/link";
-import { IProduct } from "../../types/product";
+import { Product } from "../../types";
 import { useState } from "react";
-import {
-  useCartActions,
-  useIsInCart,
-} from "@/features/cart/hooks/useCart";
+import { useCartActions, useIsInCart } from "@/features/cart/hooks/useCart";
 
-const ProductCard = ({ product }: { product: IProduct }) => {
+export const ProductCard = ({ product }: { product: Product }) => {
   const { addToCart, removeFromCart } = useCartActions();
   const isInCart = useIsInCart();
   const [isAdding, setIsAdding] = useState(false);
-  
+
   const productInCart = isInCart(product.id);
 
   const handleAddToCart = () => {
@@ -24,13 +21,13 @@ const ProductCard = ({ product }: { product: IProduct }) => {
       removeFromCart(product.id);
     } else {
       addToCart({
-        id: product.id,
+        id: product.id as number,
         title: product.title,
         price: product.price,
         description: product.description,
         rating: product.rating,
         image: product.image,
-        category: product.category
+        category: product.category,
       });
     }
 

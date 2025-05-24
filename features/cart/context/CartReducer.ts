@@ -1,4 +1,5 @@
 import { CartAction, CartActionTypes, CartState } from "../types";
+import { initialState } from "./";
 
 export const CartReducer = (
   state: CartState,
@@ -53,6 +54,11 @@ export const CartReducer = (
           0
         ),
       };
+    }
+
+    case CartActionTypes.CLEAR_CART: {
+      localStorage.removeItem("cart");
+      return initialState;
     }
 
     default:
