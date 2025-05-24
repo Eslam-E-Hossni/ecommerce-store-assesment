@@ -1,7 +1,6 @@
 import { notFound } from "next/navigation";
-import ProductsFilter from "../components/products-filter";
-import Products from "../components/products";
-import { getAllProducts } from "../services/products";
+import { ProductsFilter, Products } from "../components";
+import { getAllProducts } from "../services";
 
 const ProductsPage = async () => {
   const products = await getAllProducts();

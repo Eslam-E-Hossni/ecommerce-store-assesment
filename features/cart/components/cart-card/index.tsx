@@ -1,10 +1,10 @@
-import Button from "@/components/ui/button";
+import { Button } from "@/components/ui";
 import Image from "next/image";
 import { Product } from "@/features/products/types";
 import { useCartActions } from "../../hooks/useCart";
 import Link from "next/link";
 
-const CartCard = ({ item }: { item: Product }) => {
+export const CartCard = ({ item }: { item: Product }) => {
   const { removeFromCart } = useCartActions();
   return (
     <div className="flex items-center py-4 px-4 md:px-8 lg:px-12 bg-white border border-gray-300 rounded-xl mb-6 last:mb-0">

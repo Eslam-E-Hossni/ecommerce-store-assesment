@@ -1,7 +1,7 @@
-import Button from "@/components/ui/button";
+import { Button } from "@/components/ui";
 import { useCartActions, useCartState } from "../../hooks/useCart";
 
-const CartCheckout = () => {
+export const CartCheckout = () => {
   const { totalPrice } = useCartState();
   const { clearCart } = useCartActions();
 

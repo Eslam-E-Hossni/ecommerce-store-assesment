@@ -1,5 +1,5 @@
 "use client";
-import Button from "@/components/ui/button";
+import {Button} from "@/components/ui";
 import { useFilterActions, useFilterState } from "../../hooks/useFilter";
 import { Category } from "../../types";
 
@@ -7,7 +7,7 @@ interface CategoryFilterProps {
   categories: Category[];
 }
 
-const ProductsFilter = ({ categories }: CategoryFilterProps) => {
+export const ProductsFilter = ({ categories }: CategoryFilterProps) => {
   const { selectedCategory } = useFilterState();
   const { setCategory } = useFilterActions();
   return (

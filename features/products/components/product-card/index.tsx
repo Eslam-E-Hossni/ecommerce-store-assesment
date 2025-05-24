@@ -7,7 +7,7 @@ import { Product } from "../../types";
 import { useState } from "react";
 import { useCartActions, useIsInCart } from "@/features/cart/hooks/useCart";
 
-const ProductCard = ({ product }: { product: Product }) => {
+export const ProductCard = ({ product }: { product: Product }) => {
   const { addToCart, removeFromCart } = useCartActions();
   const isInCart = useIsInCart();
   const [isAdding, setIsAdding] = useState(false);

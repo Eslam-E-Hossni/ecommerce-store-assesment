@@ -1,9 +1,9 @@
 import { PageProps } from "@/types";
 import { notFound } from "next/navigation";
-import { getProductById } from "../../services/products";
 import Link from "next/link";
-import ProductDetails from "../../components/product-details";
-import Icon from "@/components/ui/icon";
+import { getProductById } from "../../services";
+import { ProductDetails } from "../../components";
+import { Icon } from "@/components/ui";
 
 const ProductDetailsPage = async ({ params }: PageProps<{ id: string }>) => {
   const { id } = params;

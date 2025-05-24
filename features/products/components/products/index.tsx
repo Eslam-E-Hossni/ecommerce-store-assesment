@@ -1,10 +1,10 @@
 "use client";
-import ProductCard from "../product-card";
+import {ProductCard} from "../";
 import { Product } from "../../types";
 import { useEffect } from "react";
 import { useFilterActions, useFilterState } from "../../hooks/useFilter";
 
-const Products = ({ products }: { products: Product[] }) => {
+export const Products = ({ products }: { products: Product[] }) => {
   const { filteredProducts } = useFilterState();
   const { setProducts } = useFilterActions();
 

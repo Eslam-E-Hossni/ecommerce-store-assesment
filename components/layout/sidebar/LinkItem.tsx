@@ -1,10 +1,10 @@
 "use client";
 import Link from "next/link";
-import { isActiveRoute } from "@/utils/routeMatch";
+import { isActiveRoute } from "@/utils";
 import cls from "classnames";
 import { usePathname } from "next/navigation";
 import { ILink } from ".";
-import Icon from "@/components/ui/icon";
+import { Icon } from "@/components/ui";
 import { useState } from "react";
 
 interface LinkItemProps extends ILink {

@@ -1,5 +1,5 @@
 import { FilterAction, FilterActionTypes, FilterState } from "../types";
-import { filterProducts } from "../utils/productFilters";
+import { filterProducts } from "../utils";
 
 export const FilterReducer = (
   state: FilterState,

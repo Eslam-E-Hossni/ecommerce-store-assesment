@@ -1,8 +1,6 @@
 import { ReactNode, useEffect, useReducer } from "react";
 import { CartActionTypes, CartContextType, CartItem } from "../types";
-import { CartReducer } from "./CartReducer";
-import { initialState } from "./initialState";
-import { CartContext } from "./CartContext";
+import { CartReducer, CartContext, initialState } from "./";
 
 export const CartProvider: React.FC<{ children: ReactNode }> = ({
   children,
@@ -55,7 +53,7 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({
     state,
     addToCart,
     removeFromCart,
-    clearCart
+    clearCart,
   };
 
   return (

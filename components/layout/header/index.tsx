@@ -1,10 +1,10 @@
 "use client";
-import Button from "@/components/ui/button";
+import { Button } from "@/components/ui";
 import { useCartState } from "@/features/cart/hooks/useCart";
 import Image from "next/image";
 import Search from "./search";
 
-const Header = () => {
+export const Header = () => {
   const { totalItems } = useCartState();
 
   return (

@@ -1,8 +1,6 @@
 import { ReactNode, useReducer } from "react";
-import { FilterReducer } from "./FilterReducer";
-import { initialState } from "./initialState";
+import { FilterReducer, initialState, FilterContext } from "./";
 import { FilterActionTypes, FilterContextType, Product } from "../types";
-import { FilterContext } from "./FilterContext";
 
 export const FilterProvider: React.FC<{ children: ReactNode }> = ({
   children,

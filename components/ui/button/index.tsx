@@ -1,10 +1,10 @@
 "use client";
 import { IButton } from "@/types";
 import cls from "classnames";
-import Icon from "../icon";
+import {Icon} from "../";
 import { useRouter } from "next/navigation";
 
-const Button: React.FC<IButton> = (props) => {
+export const Button: React.FC<IButton> = (props) => {
   const {
     icon,
     size = "md",

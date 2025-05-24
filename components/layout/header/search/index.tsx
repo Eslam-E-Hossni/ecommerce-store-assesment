@@ -1,5 +1,5 @@
 "use client";
-import Icon from "@/components/ui/icon";
+import { Icon } from "@/components/ui";
 import { useFilterActions } from "@/features/products/hooks/useFilter";
 import { useEffect, useState } from "react";
 

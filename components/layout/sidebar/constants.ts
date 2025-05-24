@@ -1,4 +1,4 @@
-export const menue = {
+export const LINKS = {
   main: [
     {
       label: "Discover",

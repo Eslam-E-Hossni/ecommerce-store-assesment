@@ -1,5 +1,5 @@
 import { CartAction, CartActionTypes, CartState } from "../types";
-import { initialState } from "./initialState";
+import { initialState } from "./";
 
 export const CartReducer = (
   state: CartState,

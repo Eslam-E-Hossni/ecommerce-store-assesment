@@ -87,7 +87,7 @@ const COLOR = {
   danger: "#F00028",
 };
 
-const Icon = ({
+export const Icon = ({
   name,
   direction,
   color = "gray",
