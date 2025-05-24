@@ -13,7 +13,7 @@ const Search = () => {
     }, 300);
 
     return () => clearTimeout(timer);
-  }, [searchTerm, updateSearchTerm]);
+  }, [searchTerm]);
   return (
     <div>
       <div className="lg:w-[280px] bg-gray-100 py-[10px] px-6 flex items-center gap-x-2 rounded-full">
