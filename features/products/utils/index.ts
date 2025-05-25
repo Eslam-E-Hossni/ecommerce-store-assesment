@@ -7,10 +7,8 @@ export const filterProducts = (
 
   if (state.searchTerm) {
     const searchTermLower = state.searchTerm.toLowerCase();
-    result = result.filter(
-      (product) =>
-        product.title.toLowerCase().includes(searchTermLower) ||
-        product.description.toLowerCase().includes(searchTermLower)
+    result = result.filter((product) =>
+      product.title.toLowerCase().includes(searchTermLower)
     );
   }
 
